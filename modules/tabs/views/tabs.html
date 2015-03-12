@@ -6,7 +6,8 @@
                class="tabs-link"
                ng-class="{ 'tabs-link--is-active': $index === activeTab }"
                ng-click="setActiveTab($index)"
-               lx-ripple="{{ indicator }}">
+               lx-ripple="{{ indicator }}"
+               href="{{ tab.href }}">
                <span ng-if="tab.icon !== undefined"><i class="mdi mdi-{{ tab.icon }}"></i></span>
                <span ng-if="tab.icon === undefined">{{ tab.heading }}</i></span>
             </a>
