@@ -226,7 +226,8 @@ angular.module('lumx.tabs', [])
             restrict: 'E',
             scope: {
                 heading: '@',
-                icon: '@'
+                icon: '@',
+                href: '@'
             },
             templateUrl: 'tab.html',
             transclude: true,
@@ -234,6 +235,7 @@ angular.module('lumx.tabs', [])
             link: function(scope, element, attrs, ctrl)
             {
                 scope.data = ctrl.getScope();
+                scope.href = angular.isUndefined(scope.href) ? 'javascript:void(0)' : scope.href;
                 scope.index = ctrl.addTab(scope);
 
                 scope.$on('$destroy', function(scope)
